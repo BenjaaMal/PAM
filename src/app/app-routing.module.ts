@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'registasist',
     loadChildren: () => import('./pages/registasist/registasist.module').then( m => m.RegistasistPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({

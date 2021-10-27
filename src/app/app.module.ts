@@ -11,6 +11,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 
+/*
+  Se implementaran nuestros servicios
+*/
+import { AuthenticationService } from './services/authentication.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { Storage } from '@ionic/storage';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,7 +25,10 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     BarcodeScanner,
-    Base64ToGallery
+    Base64ToGallery,
+    Storage,
+    AuthGuardService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent],
 })

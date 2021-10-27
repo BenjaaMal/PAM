@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../services/authentication.service'
 
 @Component({
   selector: 'app-secciones',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeccionesPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authSer: AuthenticationService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  logoutUser(){
+    this.authSer.logout();
   }
 
 }
